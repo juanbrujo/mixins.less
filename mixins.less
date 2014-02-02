@@ -1,0 +1,76 @@
+// (¯`·.¸¸.·´¯`·.¸¸.-> COLORS <-.¸¸.·´¯`·.¸¸.·´¯)
+@naranjo:   #ff9100;
+@sandia:    #f34b4b;
+@azul:      #2d3c7b;
+
+
+// ¸,ø¤º°`°º¤ø,¸¸,ø¤º° JUST FOR DEBUGGING
+.out(@color:red){outline:1px solid @color;}
+
+// (¯`·.¸¸.·´¯`·.¸¸.-> MIXINS <-.¸¸.·´¯`·.¸¸.·´¯)
+.escondetxt(){
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.zero(){
+  margin: 0;
+  padding: 0;
+}
+.box-shadow(@arguments){
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+.gradient-vertical(@startColor: #1e5799, @endColor: #7db9e8){
+  background: @endColor;
+  background: -moz-linear-gradient(top,  @startColor 0%, @endColor 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@startColor), color-stop(100%,@endColor));
+  background: -webkit-linear-gradient(top,  @startColor 0%,@endColor 100%);
+  background: -o-linear-gradient(top,  @startColor 0%,@endColor 100%);
+  background: -ms-linear-gradient(top,  @startColor 0%,@endColor 100%);
+  background: linear-gradient(to bottom,  @startColor 0%,@endColor 100%);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@endColor,@startColor));
+}
+.gradient-horizontal(@startColor: #1e5799, @endColor: #7db9e8) {
+  background: @endColor;
+  background: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+  background: -webkit-linear-gradient(left, @startColor, @endColor);
+  background: -moz-linear-gradient(left, @startColor, @endColor);
+  background: -ms-linear-gradient(left, @startColor, @endColor);
+  background: -o-linear-gradient(left, @startColor, @endColor);
+  background: linear-gradient(to right, @startColor, @endColor);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@endColor,@startColor));
+}
+.border-radius(@radius){
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.opacity(@opacity:0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+  @opperc: @opacity * 100;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+  filter: ~"alpha(opacity=@{opperc})";
+}
+.transform(@arguments) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -ms-transform: @arguments;
+  -o-transform: @arguments;
+  transform: @arguments;
+}
+.transition(@arguments){
+  -webkit-transition: @arguments;  
+  -moz-transition: @arguments;
+  -ms-transition: @arguments; 
+  -o-transition: @arguments;  
+  transition: @arguments;
+}
+.columns(@arguments){
+  -webkit-column-count: @arguments;
+  -moz-column-count: @arguments;
+  column-count: @arguments;
+}
