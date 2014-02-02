@@ -27,13 +27,13 @@ basic universal reseter:
 
 .gradient-vertical();
 --
-deals with those crappy prefixes:
+deals with those crappy prefixes and the filter for IE:
 
     @startColor: #1e5799, @endColor: #7db9e8
     
 .gradient-horizontal();
 --
-deals with those crappy prefixes:
+deals with those crappy prefixes and the filter for IE:
 
     @startColor: #1e5799, @endColor: #7db9e8
     
@@ -51,7 +51,7 @@ deals with those crappy prefixes:
     
 .opacity();
 --
-deals with those crappy prefixes:
+deals with those crappy prefixes and the filter for IE:
 
     @opacity:0.5
     

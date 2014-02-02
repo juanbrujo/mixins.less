@@ -8,8 +8,8 @@
 .out(@color:red){outline:1px solid @color;}
 
 // (¯`·.¸¸.·´¯`·.¸¸.-> MIXINS <-.¸¸.·´¯`·.¸¸.·´¯)
-.escondetxt(){
-  text-indent: -9999px;
+.escondetxt(@where:-9999px){
+  text-indent: @where;
   overflow: hidden;
 }
 .zero(){
