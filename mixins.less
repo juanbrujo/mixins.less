@@ -1,9 +1,3 @@
-// (¯`·.¸¸.·´¯`·.¸¸.-> COLORS <-.¸¸.·´¯`·.¸¸.·´¯)
-@naranjo:   #ff9100;
-@sandia:    #f34b4b;
-@azul:      #2d3c7b;
-
-
 // ¸,ø¤º°`°º¤ø,¸¸,ø¤º° JUST FOR DEBUGGING
 .out(@color:red){outline:1px solid @color;}
 
@@ -18,7 +12,6 @@
 }
 .box-shadow(@arguments){
   -webkit-box-shadow: @arguments;
-  -moz-box-shadow: @arguments;
   box-shadow: @arguments;
 }
 .gradient-vertical(@startColor: #1e5799, @endColor: #7db9e8){
@@ -41,33 +34,49 @@
   background: linear-gradient(to right, @startColor, @endColor);
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@endColor,@startColor));
 }
+.background-size(@arguments){
+  -webkit-background-size: @arguments;
+  background-size: @arguments;
+}
 .border-radius(@radius){
   -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
   border-radius: @radius;
 }
 .opacity(@opacity:0.5) {
-  -moz-opacity: @opacity;
-  -khtml-opacity: @opacity;
-  -webkit-opacity: @opacity;
   opacity: @opacity;
   @opperc: @opacity * 100;
   -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
   filter: ~"alpha(opacity=@{opperc})";
 }
+.transform-origin(@arguments) {
+  -webkit-transform-origin: @arguments;
+  -ms-transform-origin: @arguments;
+  transform-origin: @arguments;
+}
 .transform(@arguments) {
   -webkit-transform: @arguments;
-  -moz-transform: @arguments;
   -ms-transform: @arguments;
-  -o-transform: @arguments;
   transform: @arguments;
+}
+.transition-delay(@time) {
+  -webkit-transition-delay: @time;
+  transition-delay: @time;
 }
 .transition(@arguments){
   -webkit-transition: @arguments;  
-  -moz-transition: @arguments;
-  -ms-transition: @arguments; 
-  -o-transition: @arguments;  
   transition: @arguments;
+}
+.animation-delay(@time) {
+  -webkit-animation-delay: @time;
+  animation-delay: @time;
+}
+.animation(@arguments) {
+  -webkit-animation: @arguments;
+  animation: @arguments;
+}
+.perspective(@arguments) {
+  -webkit-perspective: @arguments;
+  perspective: @arguments;
 }
 .columns(@arguments){
   -webkit-column-count: @arguments;

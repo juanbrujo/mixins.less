@@ -1,14 +1,15 @@
 mixins.less
 ===========
 
-My basic mixins collection for LESS projects. Is is basically separated in 2 main stuctures:
+My basic mixins collection for **LESS** projects. Is is basically separated in 2 main structures:
 
-- colors variables
-- useful mixins
+- debug mixin
+- common mixins
+
 
 .out();
 --
-this is used for debugging, add it to a selector and it will surround it with an:
+used for debugging, add it to a selector and it will surround it with an:
     
     outline: 1px solid @color // (red is default).
 
@@ -36,16 +37,19 @@ deals with those crappy prefixes and the filter for IE:
 deals with those crappy prefixes and the filter for IE:
 
     @startColor: #1e5799, @endColor: #7db9e8
-    
+
+.background-size();
+--
+
+    @arguments
+
 .box-shadow();
 --
-deals with those crappy prefixes:
 
     @arguments
     
 .border-radius(@radius);
 --
-deals with those crappy prefixes:
 
     @radius
     
@@ -54,22 +58,43 @@ deals with those crappy prefixes:
 deals with those crappy prefixes and the filter for IE:
 
     @opacity:0.5
-    
+
 .transform();
 --
-deals with those crappy prefixes:
 
     @arguments
+        
+.transform-origin();
+--
+
+    @arguments
+
+.transition-delay();
+--
+
+    @time
     
 .transition();
 --
-deals with those crappy prefixes:
 
     @arguments
-    
-.columns();
+
+.animation-delay();
 --
-deals with those crappy prefixes:
+
+    @time
+    
+.animation();
+--
+
+    @arguments
+        
+.perspective();
+--
 
     @arguments 
 
+.columns();
+--
+
+    @arguments 
