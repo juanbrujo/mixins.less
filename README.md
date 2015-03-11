@@ -9,7 +9,7 @@ My basic mixins collection for **LESS** projects. Is is basically separated in 2
 
 .out();
 --
-used for debugging, add it to a selector and it will surround it with an:
+used for debugging, add it to a selector and it will surround it with a outline:
     
     outline: 1px solid @color // (red is default).
 
@@ -98,3 +98,26 @@ deals with those crappy prefixes and the filter for IE:
 --
 
     @arguments 
+    
+.keyframes
+--
+add prefixed @keyframes animations for -webkit, the only one that (still) needs them.
+
+	& {
+	  .keyframes(animation-name);.-frames(@-...){
+	    // from/to/percentage
+	  }
+	}
+	
+when you need to use prefixed properties like transform, add @{-}:
+
+	& {
+	  .keyframes(animation-name);.-frames(@-...){
+	    from {
+	      @{-}transform: values;
+	    }
+	    to {
+	      @{-}transform: values;
+	    }
+	  }
+	}
